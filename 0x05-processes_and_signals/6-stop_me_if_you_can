@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 #process
-Id=$(-f 4-to_infinity_and_beyond)
-pkill "$Id"
+pkill -f 4-to_infinity_and_beyond

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #process
 Id=$(pgrep -f 4-to_infinity_and_beyond)
-kill -9 $Id
+kill -9 "$Id"

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #config
 
-cp /etc/hosts tr
-sed -i "s/.*localhost$/127.0.0.2 localhost/" tr
-if grep -q ".*facebook.com$" tr
+cp /etc/hosts trr
+sed -i "s/.*localhost$/127.0.0.2 localhost/" trr
+if grep -q ".*facebook.com$" trr
 then
-	sed -i "s/.*facenok.com$/8.8.8.8 facebook.com/" tr
+	sed -i "s/.*facenok.com$/8.8.8.8 facebook.com/" trr
 else
-	echo "8.8.8.8 facebook.com" >> tr
+	echo "8.8.8.8 facebook.com" >> trr
 fi
-cp -f tr /etc/hosts
-rm tr
+cp -f trr /etc/hosts
+rm trr

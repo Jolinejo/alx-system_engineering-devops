@@ -1,3 +1,4 @@
+# Create file
 file { '/tmp/school':
   ensure  => 'present',
   path    => '/tmp/school',

@@ -9,4 +9,4 @@ new_string1="server_name _;\n\trewrite ^\/redirect_me https:\/\/striku.tech perm
 new_string2="\n\terror_page 404 \/custom_404.html;"
 new_string="${new_string1}${new_string2}"
 sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
-service nginx reload
+service nginx restart

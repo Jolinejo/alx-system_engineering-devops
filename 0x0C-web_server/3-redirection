@@ -4,6 +4,6 @@ sudo apt update
 sudo apt install -y nginx
 sudo ufw allow 'Nginx HTTPS'
 echo "Hello World!" > /var/www/html/index.html
-new_string="server_name _;\n\trewrite ^\/redirect_me https://striku.tech permanent;"
+new_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/striku.tech permanent;"
 sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
 sudo service nginx restart

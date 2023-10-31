@@ -6,8 +6,7 @@ sudo ufw allow 'Nginx HTTPS'
 echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
 new_string1="server_name _;\n\trewrite ^\/redirect_me https:\/\/striku.tech permanent;"
-new_string2="\n\n\tlocation = \/custom_404.html {\n\t\tinternal;\n\t}\n"
+new_string2="\n\terror_page 404 /custom_404.html;\n\n\tlocation = \/custom_404.html {\n\t\tinternal;\n\t}\n"
 new_string="${new_string1}${new_String2}"
-escaped_new_string=$(echo $new_string | sed 's/[\/&]/\\&/g')
-sudo sed -i "s/server_name _;/$escaped_new_string/" /etc/nginx/sites-enabled/default
+sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
 sudo service nginx reload

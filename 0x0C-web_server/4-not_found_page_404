@@ -8,5 +8,6 @@ echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
 new_string1="server_name _;\n\trewrite ^\/redirect_me https:\/\/striku.tech permanent;"
 new_string2="\n\n\tlocation = \/custom_404.html {\n\t\tinternal;\n\t}\n"
 new_string="${new_string1}${new_String2}"
-sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
+escaped_new_string=$(echo $new_string | sed 's/[\/&]/\\&/g')
+sudo sed -i "s/server_name _;/$escaped_new_string/" /etc/nginx/sites-enabled/default
 sudo service nginx reload

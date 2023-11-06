@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#install nginx
+sudo apt update
+sudo apt install -y nginx
+sudo ufw allow 'Nginx HTTPS'
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+new_string1="server_name _;\n\trewrite ^\/redirect_me https:\/\/striku.tech permanent;\n\terror_page 404 \/custom_404.html;"
+new_string="${new_string1}${new_string2}"
+sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
+sudo sed -i "16i\\\tadd_header X-Served-By '"${HOSTNAME}"';" /etc/nginx/nginx.conf
+service nginx restart

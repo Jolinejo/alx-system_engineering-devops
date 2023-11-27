@@ -11,9 +11,9 @@ if __name__ == "__main__":
     titles = []
     tasks = 0
     for todo in dicti:
-            tasks = tasks + 1
-            if todo["completed"] == True:
-                titles.append(todo["title"])
+        tasks = tasks + 1
+        if todo["completed"] is True:
+            titles.append(todo["title"])
     api_url = "https://jsonplaceholder.typicode.com/users/{}".format(num)
     response = requests.get(api_url)
     name = response.json()["name"]

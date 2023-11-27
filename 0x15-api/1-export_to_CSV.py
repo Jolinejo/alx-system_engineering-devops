@@ -8,7 +8,7 @@ if __name__ == "__main__":
     num = sys.argv[1]
     api_url = "https://jsonplaceholder.typicode.com/users/{}".format(num)
     response = requests.get(api_url)
-    name = response.json()["name"]
+    name = response.json()["username"]
     api_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(num)
     response = requests.get(api_url)
     dicti = response.json()

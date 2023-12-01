@@ -2,4 +2,4 @@
 #sql dump
 time = $(date -d '+%d-%m-%Y')
 sudo mysqldump -u root -p "$1" tyrell_corp > backup.sql
-sudo tar -cvzf $time.tar.gz backup.sql
+sudo tar -cvzf "$time.tar.gz" backup.sql

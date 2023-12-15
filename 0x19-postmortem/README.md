@@ -1,5 +1,5 @@
 # Postmortem Review
-
+![meme](https://github.com/Jolinejo/alx-system_engineering-devops/blob/master/0x19-postmortem/404_not_found.png)
 ## Summary
 
 - **Duration of Outage:** Oct 31, 2023, 5 AM to Oct 31, 2023, 6 AM (GMT +2)
